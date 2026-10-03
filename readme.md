@@ -4,6 +4,8 @@ Completem a Livraria Página 42 em dupla. O projeto já abre com React, JSX e CS
 
 ## Como iniciar
 
+testando
+
 No terminal, dentro da pasta do projeto:
 
 ```bash
