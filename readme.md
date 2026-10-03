@@ -70,7 +70,12 @@ Usem os arquivos indicados em cada tarefa. Os dados vêm da API; o projeto não 
 
 **Pronto quando:** o card usa os dados recebidos por props.
 
-### Pessoa 2 — Lista do catálogo
+### o:** os oito livros aparecem sem aviso de `key` no console.
+
+### Integração
+
+Confiram títulos, autores e preços recebidos da API. Na aba Network, encontrem a requisição para `/api/livros` e confiram o status 200.
+Pessoa 2 — Lista do catálogo
 
 **Arquivo:** `src/pages/Catalogo.jsx`
 
@@ -78,12 +83,7 @@ Usem os arquivos indicados em cada tarefa. Os dados vêm da API; o projeto não 
 2. Na `div.products__list`, use `livros.map`.
 3. Para cada item, renderize `<LivroCard key={livro.id} livro={livro} />`.
 
-**Pronto quando:** os oito livros aparecem sem aviso de `key` no console.
-
-### Integração
-
-Confiram títulos, autores e preços recebidos da API. Na aba Network, encontrem a requisição para `/api/livros` e confiram o status 200.
-
+**Pronto quand
 ## Semana 2 — Estado, eventos e carrinho
 
 **Slides:** Introdução e fundamentos, 23 a 38.
