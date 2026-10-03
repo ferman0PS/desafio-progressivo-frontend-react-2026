@@ -1,3 +1,5 @@
+import LivroCard from "../components/LivroCard.jsx";
+
 export default function Catalogo() {
   return (
     <main id="inicio">
