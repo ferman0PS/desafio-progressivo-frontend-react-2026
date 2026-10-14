@@ -1,9 +1,7 @@
-export default function Carrinho() {
-  // A dupla completa este componente a partir da semana 2.
-  }
+
 
   
-import { formatarPreco } from "../dados/formatarPreco.js";
+import  formatarPreco  from "../dados/formatarPreco.js";
 
 export default function Carrinho({
   carrinho,

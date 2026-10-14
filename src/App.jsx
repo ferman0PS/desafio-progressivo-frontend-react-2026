@@ -42,7 +42,7 @@ export default function App() {
 
   return (
     <>
-      <Cabecalho />
+      <Cabecalho onAbrirCarrinho={() => setCarrinhoAberto(true)}/>
       <Catalogo livros={livros} onAdicionar={adicionarAoCarrinho} />
       <Rodape />
       <Carrinho

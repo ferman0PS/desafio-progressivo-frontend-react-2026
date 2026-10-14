@@ -1,4 +1,4 @@
-export default function Cabecalho() {
+export default function Cabecalho({ onAbrirCarrinho }) {
   return (
     <header className="header">
       <div className="container header__inner">
@@ -13,6 +13,7 @@ export default function Cabecalho() {
           className="cart-trigger"
           type="button"
           aria-label="Abrir carrinho"
+          onClick={onAbrirCarrinho}
         >
           Carrinho
         </button>
