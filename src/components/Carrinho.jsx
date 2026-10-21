@@ -1,6 +1,8 @@
 
   
-import formatarPreco from "../dados/formatarPreco.js"
+
+import formatarPreco from "../dados/formatarPreco.js";
+import FinalizarCompra from "./FinalizarCompra.jsx";
 
 export default function Carrinho({
   carrinho,
@@ -8,17 +10,25 @@ export default function Carrinho({
   setCarrinhoAberto,
   setCarrinho,
 }) {
+  // Calcula o total da compra
   const total = carrinho.reduce((soma, item) => {
     return soma + item.preco * item.quantidade;
   }, 0);
 
+  // Remove um livro do carrinho
   function removerLivro(id) {
     const novoCarrinho = carrinho.filter((item) => item.id !== id);
     setCarrinho(novoCarrinho);
   }
 
+  // Fecha o painel do carrinho
   function fecharCarrinho() {
     setCarrinhoAberto(false);
+  }
+
+  // Finaliza a compra simulada e esvazia o carrinho
+  function finalizarCompra() {
+    setCarrinho([]);
   }
 
   return (
@@ -88,8 +98,15 @@ export default function Carrinho({
             <span>Total</span>
             <strong>{formatarPreco(total)}</strong>
           </div>
+
+          <FinalizarCompra
+            carrinho={carrinho}
+            total={total}
+            onFinalizar={finalizarCompra}
+          />
         </footer>
       </aside>
     </>
   );
 }
+
