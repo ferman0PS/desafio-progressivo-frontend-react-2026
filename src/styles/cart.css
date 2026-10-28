@@ -191,3 +191,32 @@
     padding-right: 20px;
   }
 }
+
+.checkout-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 10px;
+}
+.checkout-form__field label {
+  color: var(--muted);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.checkout-form__field input {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 10px;
+}
+.checkout-form__error {
+  color: #b74e4e;
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+.checkout-form__success {
+  color: var(--navy);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
