@@ -42,11 +42,26 @@ export default function Catalogo({ livros, carregando, erro, onAdicionar }) {
             <h2>Escolha sua próxima leitura</h2>
           </div>
         </div>
-        <div className="products__list">
-          {livros.map((livro) => (
-            <LivroCard key={livro.id} livro={livro} onAdicionar={onAdicionar} />
-          ))}
-        </div>
+        {carregando && <p className="results-message">Carregando...</p>}
+        {!carregando && erro && (
+          <p className="results-message" role="alert">
+            {erro}
+          </p>
+        )}
+        {!carregando && !erro && livros.length === 0 && (
+          <p className="results-message">Nenhum livro encontrado</p>
+        )}
+        {!carregando && !erro && livros.length > 0 && (
+          <div className="products__list">
+            {livros.map((livro) => (
+              <LivroCard
+                key={livro.id}
+                livro={livro}
+                onAdicionar={onAdicionar}
+              />
+            ))}
+          </div>
+        )}
       </section>
       <section className="about" id="sobre">
         <div className="container">

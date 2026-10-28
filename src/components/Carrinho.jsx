@@ -1,6 +1,3 @@
-
-  
-
 import formatarPreco from "../dados/formatarPreco.js";
 import FinalizarCompra from "./FinalizarCompra.jsx";
 
@@ -10,25 +7,17 @@ export default function Carrinho({
   setCarrinhoAberto,
   setCarrinho,
 }) {
-  // Calcula o total da compra
   const total = carrinho.reduce((soma, item) => {
     return soma + item.preco * item.quantidade;
   }, 0);
 
-  // Remove um livro do carrinho
   function removerLivro(id) {
     const novoCarrinho = carrinho.filter((item) => item.id !== id);
     setCarrinho(novoCarrinho);
   }
 
-  // Fecha o painel do carrinho
   function fecharCarrinho() {
     setCarrinhoAberto(false);
-  }
-
-  // Finaliza a compra simulada e esvazia o carrinho
-  function finalizarCompra() {
-    setCarrinho([]);
   }
 
   return (
@@ -58,9 +47,11 @@ export default function Carrinho({
           </button>
         </header>
 
-        <div className="cart__products">
+        <div className="cart__body cart__products">
           {carrinho.length === 0 ? (
-            <p>Carrinho vazio</p>
+            <div className="cart__empty">
+              <strong>Carrinho vazio</strong>
+            </div>
           ) : (
             carrinho.map((item) => (
               <article className="cart__product" key={item.id}>
@@ -76,13 +67,11 @@ export default function Carrinho({
 
                   <p>Quantidade: {item.quantidade}</p>
 
-                  <strong>
-                    {formatarPreco(item.preco * item.quantidade)}
-                  </strong>
+                  <strong>{formatarPreco(item.preco * item.quantidade)}</strong>
 
                   <button
                     type="button"
-                    className="cart__remove"
+                    className="remove"
                     onClick={() => removerLivro(item.id)}
                   >
                     Remover
@@ -102,11 +91,10 @@ export default function Carrinho({
           <FinalizarCompra
             carrinho={carrinho}
             total={total}
-            onFinalizar={finalizarCompra}
+            onFinalizar={() => setCarrinho([])}
           />
         </footer>
       </aside>
     </>
   );
 }
-
