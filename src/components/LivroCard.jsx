@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import formatarPreco from "../dados/formatarPreco.js";
 
 export default function LivroCard({ livro, onAdicionar }) {
@@ -14,11 +15,13 @@ export default function LivroCard({ livro, onAdicionar }) {
         <span>{livro.autor}</span>
         <div>
           <strong>{formatarPreco(livro.preco)}</strong>
-          <button type="button" onClick={() => onAdicionar(livro)}>
-            Adicionar ao carrinho
-          </button>
+          <Link to={`/livros/${livro.id}`}>Ver detalhes</Link>
         </div>
+        <button type="button" onClick={() => onAdicionar(livro)}>
+          Adicionar ao carrinho
+        </button>
       </div>
     </article>
   );
 }
+

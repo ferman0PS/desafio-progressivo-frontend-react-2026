@@ -1,6 +1,6 @@
 import LivroCard from "../components/LivroCard.jsx";
 
-export default function Catalogo({ livros, onAdicionar }) {
+export default function Catalogo({ livros, carregando, erro, onAdicionar }) {
   return (
     <main id="inicio">
       <section className="hero">
